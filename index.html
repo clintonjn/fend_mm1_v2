@@ -29,11 +29,26 @@
       }
     }
   </script>
+  <style>
+    body {
+      background-image: url('./images/backgroundImage.png');
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: auto 100vh;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        background-position: center top;
+        background-size: auto 100vh;
+      }
+    }
+  </style>
 </head>
 <body class="font-roboto bg-white overflow-x-hidden">
   
   <!-- Section 1 - Hero -->
-  <section class="min-h-screen bg-cover bg-right bg-no-repeat" style="background-image: url('./images/backgroundImage.png'); background-size: 60% auto;">
+  <section class="min-h-screen">
     <div class="container mx-auto px-0">
       
       <!-- Navbar -->
@@ -56,16 +71,16 @@
       
       <!-- Hero Content -->
       <div class="flex flex-col md:flex-row items-center mt-8 px-[9%]">
-        <div class="md:w-1/2 order-2 md:order-1">
-          <div class="text-center md:text-left py-16 pr-40">
-            <h1 class="text-title text-[3.4em] font-medium leading-tight max-w-[85%] mb-6">
+        <div class="w-full md:w-1/2 order-2 md:order-1">
+          <div class="flex flex-col text-center md:text-left py-16 pr-40 w-full md:w-[760px] lg:w-[760px] xl:w-[760px] sm:w-[610px]">
+            <h1 class="font-roboto font-medium text-[50px] leading-[66px] tracking-[1px] mb-6 md:text-[50px] md:leading-[66px] sm:text-[40px] sm:leading-[52px] text-title w-full">
               Introduce Your Product Quickly & Effectively
             </h1>
-            <p class="text-subtitle text-lg font-normal text-justify max-w-[85%] mb-4">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+            <p class="font-roboto font-normal text-[18px] leading-[30px] tracking-[-0.5px] text-justify mb-4 w-full md:text-[18px] md:leading-[30px] sm:text-[16px] sm:leading-[26px] text-subtitle">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean<br>commodo ligula eget dolor. Aenean massa. Cum sociis natoque<br>penatibus et magnis dis parturient montes, nascetur ridiculus
             </p>
-            <p class="text-subtitle text-lg font-normal text-justify max-w-[85%] mb-20">
-              mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            <p class="font-roboto font-normal text-[18px] leading-[30px] tracking-[-0.5px] text-justify mb-20 w-full md:text-[18px] md:leading-[30px] sm:text-[16px] sm:leading-[26px] text-subtitle">
+              mus. Donec quam felis, ultricies nec, pellentesque eu, pretium<br>quis, sem. Nulla consequat massa quis enim.
             </p>
             <div class="flex space-x-4">
               <button class="bg-primary text-white font-medium py-3 px-8 rounded-sm border-2 border-primary hover:bg-opacity-90">
