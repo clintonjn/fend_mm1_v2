@@ -44,15 +44,35 @@
       }
     }
     @media (min-width: 1441px) {
-      .hero-bg {
+      .hero-bg::before {
         background-size: auto 80% !important;
       }
     }
     
     @media (min-width: 1600px) {
-      .hero-bg {
+      .hero-bg::before {
         background-size: auto 90% !important;
       }
+    }
+    .hero-bg {
+      position: relative;
+    }
+    
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      background-image: url('./images/section1.png');
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: auto clamp(50%, 50vw + 20%, 100%);
+      opacity: clamp(0.1, (100vw - 400px) / 600, 1);
+      z-index: -1;
+      pointer-events: none;
+      transition: all 0.3s ease;
     }
   </style>
 </head>
@@ -82,11 +102,11 @@
     </div>
       
     <!-- Hero Content -->
-    <div class="bg-no-repeat bg-right hero-bg mt-40 min-h-[750px]" style="background-image: url('./images/section1.png'); background-size: auto 100%;">
+    <div class="bg-no-repeat bg-right hero-bg mt-40 min-h-[750px]">
       <div class="container mx-auto px-0">
-        <div class="flex flex-col md:flex-row items-center mt-16 px-[9%]">
+        <div class="flex flex-col md:flex-row items-center mt-16 px-[9%] md:px-[9%] justify-center">
         <div class="w-full md:w-1/2 order-2 md:order-1">
-          <div class="flex flex-col text-center md:text-left py-16 pr-40 w-full md:w-[760px] lg:w-[760px] xl:w-[760px] sm:w-[610px]">
+          <div class="flex flex-col text-center md:text-left py-16 md:pr-40 w-full md:w-[760px] lg:w-[760px] xl:w-[760px] sm:w-[610px] mx-auto md:mx-0">
             <h1 class="font-roboto font-medium text-[50px] leading-[66px] tracking-[1px] mb-6 md:text-[50px] md:leading-[66px] sm:text-[40px] sm:leading-[52px] text-title w-full">
               Introduce Your Product Quickly & Effectively
             </h1>
@@ -96,18 +116,18 @@
             <p class="font-roboto font-normal text-[18px] leading-[30px] tracking-[-0.5px] text-justify mb-20 w-full md:text-[18px] md:leading-[30px] sm:text-[16px] sm:leading-[26px] text-subtitle">
               mus. Donec quam felis, ultricies nec, pellentesque eu, pretium<br>quis, sem. Nulla consequat massa quis enim.
             </p>
-            <div class="flex space-x-4">
-              <button class="bg-primary text-white font-medium py-3 px-8 rounded-sm border-2 border-primary hover:bg-opacity-90">
+            <div class="flex space-x-4 justify-center md:justify-start">
+              <button class="bg-primary text-white font-medium rounded-sm border-2 border-primary hover:bg-opacity-90 w-[189px] h-[36px]">
                 Purchase UI Kit
               </button>
-              <button class="text-primary font-medium py-3 px-8 rounded-sm border-2 border-primary bg-transparent hover:bg-primary hover:text-white">
+              <button class="text-primary font-medium rounded-sm border-2 border-primary bg-transparent hover:bg-primary hover:text-white w-[189px] h-[36px]">
                 Learn More
               </button>
             </div>
           </div>
         </div>
-        <div class="md:w-1/2 order-1 md:order-2">
-          <!-- Image now as background on section -->
+        <div class="md:w-1/2 order-1 md:order-2 hidden md:block">
+          <!-- Empty div for desktop layout, hidden on mobile -->
         </div>
         </div>
       </div>
